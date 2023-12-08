@@ -5,7 +5,7 @@
 // Ex.:
 //   giveMeTwo();
 //   => 2
-const giveMeTwo = undefined;
+const giveMeTwo = () => 2;
 
 // Set the value of addNums to an arrow function that takes in two numbers and
 // returns their sum.
@@ -13,7 +13,7 @@ const giveMeTwo = undefined;
 // Ex.:
 //   addNums(1, 2);
 //   => 3
-const addNums = undefined;
+const addNums = (a,b) => a + b;
 
 // Set the value of max to an arrow function that takes in two numbers and
 // returns the largest one.
@@ -21,7 +21,7 @@ const addNums = undefined;
 // Ex.:
 //   max(1, 2);
 //   => 2
-const max = undefined;
+const max = (a, b) => a > b ? a : b;
 
 // Given an array of numbers, return a new array that only includes the even
 // numbers. Do this using array iteration methods. Do NOT use a for loop.
@@ -29,7 +29,10 @@ const max = undefined;
 // Ex.:
 //   evens([1, 2, 3, 4, 5]);
 //   => [2, 4]
-function evens(nums) {}
+function evens(nums) {
+    const evens = nums.filter((num) => num % 2 === 0);
+    return evens;
+}
 
 // Given an array of names, return a new array of greetings for each name. Do
 // this using array iteration methods. Do NOT use a for loop.
@@ -37,7 +40,10 @@ function evens(nums) {}
 // Ex.:
 //   createGreetings(['Clive', 'Jill', 'Torgal']);
 //   => ['Hello, Clive!', 'Hello, Jill!', 'Hello, Torgal!']
-function createGreetings(names) {}
+function createGreetings(names) {
+    const greetings = names.map((name) => `Hello, ${name}!`);
+    return greetings;
+}
 
 // Given an array of words, return a new array where each word is uppercased
 // and only includes words that are longer than 4 characters. Do this using
@@ -46,6 +52,10 @@ function createGreetings(names) {}
 // Ex.:
 //   loudLongWords(['apple', 'pear', 'cake', 'pinata']);
 //   => ['APPLE', 'PINATA']
-function loudLongWords(words) {}
+function loudLongWords(words) {
+    const longerThanFour = words.filter((word) => word.length > 4);
+    const upperWord = longerThanFour.map((word) => word.toUpperCase());
+    return upperWord;
+}
 
 export { addNums, createGreetings, evens, giveMeTwo, loudLongWords, max };

@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+    color: white;
+    background-color: black;
+}
+span {
+    display: block;
+    padding: 5px;
+}
+
+table {
+    margin-top: 50px;
+    border: 1px solid white;
+}
+
+th {
+    font-weight: 700;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid white;
+}
+
+td {
+    text-align: start;
+    padding: 5px;
+    border: 1px solid white;
+}
