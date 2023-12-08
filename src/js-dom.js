@@ -8,7 +8,11 @@
 // update and say "Log out". If a user clicks on the button again, its text
 // should switch from "Log Out" to "Log In".
 
-/// TODO: replace this with your code
+const logButton = document.querySelector('#auth');
+logButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    logButton.innerText === 'Log in' ? logButton.innerText = 'Log out' : logButton.innerText = 'Log in';
+})
 
 // Send an alert
 //
@@ -17,7 +21,14 @@
 // A user should be able to enter what they want the alert to say in the
 // text box. Then, they can submit the form to trigger the alert.
 
-/// TODO: replace this with your code
+// const alertForm = document.querySelector('#send-alert');
+// const alertButton = document.querySelector()
+const alertTextInput = document.querySelector('#alert-message');
+document.querySelector('form').addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    alert(alertTextInput.value);
+})
+
 
 // Add an item
 //
@@ -34,7 +45,13 @@
 //     <li>Item</li>  <!-- This was added after double-clicking -->
 //   </ol>
 
-/// TODO: replace this with your code
+const oList = document.querySelector('#list');
+document.querySelector('#item-adder').addEventListener('click', (evt) => {
+    evt.preventDefault();
+    const li = document.createElement('li');
+    li.innerText = 'Item';
+    oList.appendChild(li);
+})
 
 // Change colors
 //
@@ -45,7 +62,19 @@
 // Clicking on "Turn Stuff Red" should make text red and clicking on "Turn
 // Stuff Blue" should make text blue.
 
-/// TODO: replace this with your code
+const changeColorList = document.querySelectorAll('.changes-colors');
+document.querySelector('#blue').addEventListener('click', (evt) => {
+    evt.preventDefault();
+    for (const element of changeColorList) {
+        element.style.color = 'blue';
+    }
+})
+document.querySelector('#red').addEventListener('click', (evt) => {
+    evt.preventDefault();
+    for (const element of changeColorList) {
+        element.style.color = 'red';
+    }
+})
 
 // Calculate factorial
 //
@@ -79,4 +108,15 @@
 // the feedback text to say "The word must be at least 4 characters long." and
 // change the color of the text to red..
 
-/// TODO: replace this with your code
+const feedbackPara = document.querySelector('.form-feedback');
+document.querySelector('#recommend-word').addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    const word = document.querySelector('#word').value;
+    if (word.length < 4) {
+        feedbackPara.innerText = 'The word must be at least 4 characters long.';
+        feedbackPara.style.color ='red';
+    } else {
+        feedbackPara.innerText = 'Thanks for your submission!';
+        feedbackPara.style.color = 'green';
+    }
+})
