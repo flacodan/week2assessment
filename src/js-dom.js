@@ -85,13 +85,25 @@ document.querySelector('#red').addEventListener('click', (evt) => {
 // Write the following code to calculate the factorial of a positive integer (you
 // don't need to worry about negative numbers).
 //
-// Write a function that calculates the factorial of a positive number Add an
+// Write a function that calculates the factorial of a positive number. Add an
 // event listener that catches when someone clicks on the "calculate" button and:
 //   - gets whatever number is inside the input field
 //   - calls your function that calculates a factorial
 //   - puts the result of the function inside the "result" span
 
-/// TODO: replace this with your code
+const factInput = document.querySelector('#factorial-input');
+const resultField = document.querySelector('#result');
+document.querySelector('#factorial-calculator').addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    let num = factInput.value;
+    let result = num;
+    if (num === 0 || num === 1) {resultField.innerText = '1';}
+    while (num > 1) {
+        num--;
+        result = result * num;
+    }
+    resultField.innerText = result;
+})
 
 // Validate a form
 //
