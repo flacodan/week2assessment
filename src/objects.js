@@ -102,8 +102,8 @@ function translateToPirateTalk(phrase) {
 //   wordCount('hello world')
 //   => { hello: 1, world: 1 }
 function wordCount(str) {
-  //convert srt to arr with split method
-  //
+  const strArray = str.split(' ');
+  const wordCounts = [strArray[0]: 1];
 }
 
 // Given an object representing a bug, return true if the given bug is
